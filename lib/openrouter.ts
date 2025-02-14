@@ -1,4 +1,4 @@
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = process.env.NEXT_PUBLIC_OPENROUTER_API_KEY as string;
 const MODEL = 'meta-llama/llama-3.3-70b-instruct:free';
 
 export async function analyzeNews(url: string) {
