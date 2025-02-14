@@ -198,9 +198,6 @@ export default function NewsAnalysis({ result }: NewsAnalysisProps) {
           {result.fact_check.supporting_sources.map((source, index) => (
             <a
               key={index}
-              href={source}
-              target="_blank"
-              rel="noopener noreferrer"
               className="flex items-center space-x-2 text-blue-600 hover:text-blue-800"
             >
               <ExternalLink className="h-4 w-4" />
