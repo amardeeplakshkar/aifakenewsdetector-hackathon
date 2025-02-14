@@ -29,10 +29,12 @@ const Navbar = () => {
                         }
                         {
                             user.isSignedIn ? (
-                                <UserButton/>
+                                <UserButton fallback='/sign-in'/>
                             )
                             :(
+                                <div className='bg-white p-2 border rounded-xl'>
                                 <SignInButton/>
+                                </div>
                             )
                         }
                     </div>

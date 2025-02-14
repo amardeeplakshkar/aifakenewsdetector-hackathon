@@ -7,8 +7,8 @@ export default function AuthLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className='relative justify-center sm:justify-start h-[92dvh] w-dvw flex p-8 items-center overflow-hidden'>
-        <div className='hidden scale-150 sm:block absolute inset-0 z-0'>
+        <div className='relative bg-black justify-center sm:justify-start h-[100dvh] w-dvw flex p-8 items-center overflow-hidden'>
+        <div className='hidden scale-[1.35] sm:block absolute inset-0 z-0'>
             <BotSpline />
         </div>
             {children}
