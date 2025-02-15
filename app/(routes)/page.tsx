@@ -1,19 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Brain, NewspaperIcon, CheckCircle, Globe, Youtube } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { WordRotate } from '@/components/magicui/word-rotate';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useYtUrl } from '@/components/context/YtUrlContext';
+import { ProModal } from '@/components/ProModal';
+import { useUser } from '@clerk/nextjs';
 
 export default function Home() {
   const router = useRouter();
   const [url, setUrl] = useState('');
   const { ytUrl, setYtUrl } = useYtUrl();
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-
-
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const { isSignedIn } = useUser()
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsAnalyzing(true);
@@ -25,6 +27,12 @@ export default function Home() {
       setIsAnalyzing(false);
     }
   };
+
+  useEffect(() => {
+    if (isSignedIn === false) {
+      setIsModalOpen(true);
+    }
+  }, [isSignedIn]);
 
   const handleYtSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,7 +73,7 @@ export default function Home() {
                 Article
               </TabsTrigger>
               <TabsTrigger value="Youtube">
-              <Youtube className="text-red-500 mr-2 h-4 w-4" />
+                <Youtube className="text-red-500 mr-2 h-4 w-4" />
                 Youtube
               </TabsTrigger>
             </TabsList>
@@ -158,6 +166,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ProModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   );
 }
