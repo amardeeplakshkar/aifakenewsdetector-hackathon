@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrustGuard - AI-Powered Fake News Detection
+
+TrustGuard is an advanced AI-powered platform designed to detect and analyze potential fake news in articles and YouTube videos. Using state-of-the-art language models and comprehensive verification methods, TrustGuard helps users make informed decisions about the content they consume.
+
+## Features
+
+- **Article Analysis**: Analyze news articles for credibility and authenticity
+- **YouTube Video Analysis**: Verify the credibility of YouTube video content
+- **Comprehensive Scoring**: Detailed breakdown of real and disputed points
+- **Content Analysis**: Evaluation of factual accuracy, bias level, and sensationalism
+- **Supporting Sources**: Cross-referenced verification with reliable sources
+- **Confidence Scoring**: Clear confidence metrics for analysis results
+- **User Authentication**: Secure access with email/password authentication
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React 18
+- **Styling**: Tailwind CSS, shadcn/ui
+- **Authentication**: Clerk
+- **AI Integration**: OpenRouter API (Meta Llama 3)
+- **3D Graphics**: Spline
+- **Animation**: Motion
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18 or higher
+- npm or pnpm package manager
+
+### Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_OPENROUTER_API_KEY=your_openrouter_api_key
+```
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/trustguard.git
+cd trustguard
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+pnpm install
+```
+
+3. Start the development server:
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Article Analysis**:
+   - Enter a news article URL in the input field
+   - Click "Analyze Article" to get detailed credibility analysis
 
-## Learn More
+2. **YouTube Analysis**:
+   - Switch to the YouTube tab
+   - Paste a YouTube video URL
+   - Click "Analyze Video" for content verification
 
-To learn more about Next.js, take a look at the following resources:
+3. **Results**:
+   - View comprehensive analysis including:
+     - Factual accuracy
+     - Bias level
+     - Sensationalism rating
+     - Supporting sources
+     - Final verdict with confidence score
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Acknowledgments
+
+- [Clerk](https://clerk.com/) for authentication
+- [OpenRouter](https://openrouter.ai/) for AI capabilities
+- [Spline](https://spline.design/) for 3D graphics
+- [shadcn/ui](https://ui.shadcn.com/) for UI components
